@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>因数分解メーカー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <br>
+  <h3>因数分解メーカー
+  <div class="ver">-ver.1.1-</div></h3>
+  <hr>
+  <p id="result"></p>
+ <center> <form name="myForm">
+    <h4>上の式が(x+A)(x+B)と表されるとき、</h4>
+<div>
+      <label for="number">A= </label>
+      <input type="number" name="score" min="0" max="100" id="input1">
+</div>
+   <div>
+      <label for="number">B= </label>
+      <input type="number" name="scores" min="0" max="100" id="input2">
+   </div>
+  <br>
+    <input type="reset" name="clear" value="クリア">
+    <input type="button" name="send" value="解答" onclick="checkAnswer()">
+    <input type="button" value="もう一問" onclick="window.location.reload();" />
+  </form>
+ </center>
+  <script>
+
+      document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.key === 'Enter') {
+          checkAnswer();
+        }
+      });
+
+    var min = 1 ;
+    var max = 10 ;
+
+    var a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+    var b = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+
+    var i = a + b;
+    var j = a * b;
+
+    var result = "x²+" + i + "x+" + j;
+    document.getElementById("result").innerHTML = result;
+
+    function checkAnswer() {
+      let input1 = document.getElementById("input1").value;
+      let input2 = document.getElementById("input2").value;
+      let X = input1*input2
+      let Y = parseInt(input1)+parseInt(input2)
+      if (Y == i && X == j) {
+        alert("正解");
+        location.reload()
+      } else {
+        alert("不正解" + " 正解は A=" + a + " B=" + b);
+        location.reload()
+      }
+    }
+  
+  </script>
+  <footer><hr><center>&copy;2024 TEAM-Threep.<br><a href="/kousin.html">更新履歴</a></center></footer>
+</body>
+</html>
