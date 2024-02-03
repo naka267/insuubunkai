@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+<html lang="ja">
 <head>
   <title>因数分解メーカー</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
 
@@ -9,34 +11,35 @@
   <br>
   <h3 style="line-height: 2px;">因数分解メーカー
     <center><h5>(X²の係数あり)</h5></center>
-  <div class="ver">-ver.2.10-</div></h3>
-  <hr>
+  <div class="ver">-ver.2.20-</div></h3>
+  <center><a href="javascript:history.back();">戻る</a><br></center>
+  <hr width="100%">
   <p id="result"></p>
  <center> <form name="myForm">
     <h4>上の式が X(Ax+B)(Cx+D) と表されるとき、</h4>
 <div>
       <label for="number">X= </label>
-      <input type="number" name="score" min="0" max="100" id="input0">
+      <input type="number" name="score" min="0" max="1000" id="input0">
 </div>
 <div>
       <label for="number">A= </label>
-      <input type="number" name="score" min="0" max="100" id="input1">
+      <input type="number" name="score" min="0" max="1000" id="input1">
 </div>
 <div>
       <label for="number">B= </label>
-      <input type="number" name="score" min="0" max="100" id="input2">
+      <input type="number" name="score" min="0" max="1000" id="input2">
 </div>
 <div>
       <label for="number">C= </label>
-      <input type="number" name="score" min="0" max="100" id="input3">
+      <input type="number" name="score" min="0" max="1000" id="input3">
 </div> 
 <div>
       <label for="number">D= </label>
-      <input type="number" name="score" min="0" max="100" id="input4">
+      <input type="number" name="score" min="0" max="1000" id="input4">
 </div>
   <br>
     <input type="reset" name="clear" value="クリア">
-    <input type="button" name="send" value="決定" onclick="checkAnswer()"accesskey="Enter">
+    <input type="button" name="ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssend" value="決定" onclick="checkAnswer()"accesskey="Enter">
     <input type="button" name="send" value="ヒント" onclick="hint()">
   </form>
  </center>
@@ -48,9 +51,9 @@
         }
       });
 
-    var min = 1 ;
-    var max = 10 ;
-    var max2 = 3 ;
+    var min = 100234567823434 ;
+    var max = 1008973456782410;
+    var max2 = 10024245 ;
 
     var a = Math.floor( Math.random() * (max2 + 1 - min) ) + min ;
     var b = Math.floor( Math.random() * (max + 1 - min) ) + min ;
@@ -126,12 +129,8 @@ function hint(){
 
   </script>
 
-
-<footer><hr><center>
-  <a href="https://threep.cloudfree.jp" id="copy">&copy;2024 TEAM-Threep.</a>
-
-  <br><a href="https://naka267.github.io/insuubunkai/">ホーム</a> &emsp;<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a><br>
-</center></footer>
-  </body>
-
+   <footer>
+   <hr><center><a href="https://threep.cloudfree.jp" id="copy">&copy;2024 TEAM-Threep.</a><br><a href=index.html>メニューにもどる</a>　<a href="kousin.html">更新履歴</a></center></script>
+   </footer>
+  </body
   </html>
