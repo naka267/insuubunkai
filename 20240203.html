@@ -10,8 +10,8 @@
   <div class="bg_pattern Paper_v2"></div>
   <br>
   <h3 style="line-height: 2px;">因数分解メーカー
-    <center><h5>(X²の係数あり・鬼ムズモード)</h5></center>
-  <div class="ver">-ver.2.30-</div></h3>
+    <center><h5>(2次式 X²の係数あり・鬼ムズモード)</h5></center>
+  <div class="ver"><script src=ver.js></script></div></h3>
   <center><a href="javascript:history.back();">戻る</a><br></center>
   <hr width="100%">
   <p id="result"></p>
@@ -51,9 +51,9 @@
         }
       });
 
-    var min = 1000000000 ;
-    var max = 10000000000 ;
-    var max2 = 10000000000 ;
+    var min = 10 ;
+    var max = 100 ;
+    var max2 = 100 ;
 
     var a = Math.floor( Math.random() * (max2 + 1 - min) ) + min ;
     var b = Math.floor( Math.random() * (max + 1 - min) ) + min ;
