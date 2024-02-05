@@ -39,6 +39,16 @@ input[type="reset"] {
   cursor: pointer;
 }
 
+.br-sp {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .br-sp {
+        display: block;
+    }
+}
+
 h3 {
   font-size: 30px;
   text-align: center;
@@ -258,3 +268,4 @@ a.btndaze3:hover:before {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
 }
+
