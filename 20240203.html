@@ -10,32 +10,32 @@
   <div class="bg_pattern Paper_v2"></div>
   <br>
   <h3 style="line-height: 2px;">因数分解メーカー
-    <center><h5>(2次式 X²の係数あり・鬼ムズモード)</h5></center>
+    <center><h5><p>(2次式 X²の係数あり・鬼ムズモード)</p></h5></center>
   <div class="ver"><script src=ver.js></script></div></h3>
-  <center><a href="javascript:history.back();">戻る</a><br></center>
-  <hr width="100%">
+  <center>    <a href="javascript:history.back();">戻る</a><br></center>
+  <hr width="98%">
   <p id="result"></p>
  <center> <form name="myForm">
     <h4>上の式が X(Ax+B)(Cx+D) と表されるとき、</h4>
 <div>
       <label for="number">X= </label>
-      <input type="number" name="score" min="0" max="1000" id="input0">
+      <input type="number" name="score" min="0" max="1000" id="input0" onkeydown="handleEnterKey(event, 'input1')">
 </div>
 <div>
       <label for="number">A= </label>
-      <input type="number" name="score" min="0" max="1000" id="input1">
+      <input type="number" name="score" min="0" max="1000" id="input1"  onkeydown="handleEnterKey(event, 'input2')">
 </div>
 <div>
       <label for="number">B= </label>
-      <input type="number" name="score" min="0" max="1000" id="input2">
+      <input type="number" name="score" min="0" max="1000" id="input2"  onkeydown="handleEnterKey(event, 'input3')">
 </div>
 <div>
       <label for="number">C= </label>
-      <input type="number" name="score" min="0" max="1000" id="input3">
+      <input type="number" name="score" min="0" max="1000" id="input3"  onkeydown="handleEnterKey(event, 'input4')">
 </div> 
 <div>
       <label for="number">D= </label>
-      <input type="number" name="score" min="0" max="1000" id="input4">
+      <input type="number" name="score" min="0" max="1000" id="input4"  onkeydown="handleEnterKey(event, 'input5')">
 </div>
   <br>
     <input type="reset" name="clear" value="クリア">
@@ -51,9 +51,9 @@
         }
       });
 
-    var min = 10 ;
-    var max = 100 ;
-    var max2 = 100 ;
+    var min = 1000 ;
+    var max = 10000 ;
+    var max2 = 10000 ;
 
     var a = Math.floor( Math.random() * (max2 + 1 - min) ) + min ;
     var b = Math.floor( Math.random() * (max + 1 - min) ) + min ;
@@ -126,12 +126,21 @@ function hint(){
    if (rand == 9) msg = "その答えは一生かけて追いかけてくもんさ。\n できないことなんてないんだ。\n\n 下を向いてばかりじゃ、\nあんなきれいな虹を見つけることなんてできなかったろう？\n 頑張れよ。生きてりゃ色々あるもんさ。知らんけど。";
   alert(msg);
 }
-
+    
+    function handleEnterKey(event, nextElementId) {
+      if (event.key === 'Enter') {
+        if (nextElementId === 'ssend') {
+          checkAnswer();
+        } else {
+          document.getElementById(nextElementId).focus();
+        }
+        event.preventDefault();
+      }
+    }
   </script>
 
- <footer><hr><center>
-    <a href="https://threep.cloudfree.jp" id="copy">&copy;2024 TEAM-Threep.</a>
-
-    <br><a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a></center></footer>
-  </body
+  <footer><hr><center>
+    &copy;2024 TEAM-Threep.<br>
+   <a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a></center></footer>
+</body>
   </html>
