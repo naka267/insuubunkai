@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問題集</title>
+    <style>
+
+      .body{
+        width:400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1,h2,p{
+        font-family: 'Times New Roman', Times, serif;
+      }
+      
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #0074D9;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        #answer1, #answer2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+  <div class="body"><h1>問題集</h1></div>
+    <hr>
+  <div class="body">
+    <h2>かんたん</h2><br>
+    <p>(1)</p>
+    <button onclick="toggleAnswer(1)">＋答え</button>
+    <p id="answer1">a</p>
+<br>
+    <p>(2)</p>
+    <button onclick="toggleAnswer(2)">＋答え</button>
+    <p id="answer2">b</p>
+  </div>
+  
+
+    <!-- 他の問題も同様に追加 -->
+
+    <script>
+        function toggleAnswer(questionNumber) {
+            const answerElement = document.getElementById(`answer${questionNumber}`);
+            if (answerElement.style.display === "none") {
+                answerElement.style.display = "block";
+                document.querySelector(`button[onclick="toggleAnswer(${questionNumber})"]`).textContent = "ー答え";
+            } else {
+                answerElement.style.display = "none";
+                document.querySelector(`button[onclick="toggleAnswer(${questionNumber})"]`).textContent = "＋答え";
+            }
+        }
+    </script>
+    <footer><hr><center>
+      &copy;2024 TEAM-Threep.<br>
+     <a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a></center></footer>
+</body>
+</html>
