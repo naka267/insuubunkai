@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-  <html lang="ja">
+<html lang="ja">
 <head>
   <title>因数分解メーカー</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
   <div class="bg_pattern Paper_v2"></div>
@@ -10,22 +11,22 @@
   <h3 style="line-height: 2px;">因数分解メーカー
     <center><h5>(3次式 X²の係数なし)</h5></center>
   <div class="ver"><script src=ver.js></script></div></h3>
-  <center><a href="javascript:history.back();">戻る</a><br></center>
+  <center>    <a href="javascript:history.back();">戻る</a><br></center>
   <hr>
   <p id="result"></p>
  <center> <form name="myForm">
     <h4>上の式が(x+A)(x+B)(x+C)と表されるとき、</h4>
 <div>
       <label for="number">A= </label>
-      <input type="number" name="score" min="0" max="100" id="input1">
+      <input type="number" name="score" min="0" max="100" id="input1" onkeydown="handleEnterKey(event, 'input2')">
 </div>
    <div>
       <label for="number">B= </label>
-      <input type="number" name="scores" min="0" max="100" id="input2">
+      <input type="number" name="scores" min="0" max="100" id="input2" onkeydown="handleEnterKey(event, 'input3')">
    </div>
     <div>
        <label for="number">C= </label>
-       <input type="number" name="scoress" min="0" max="100" id="input3">
+       <input type="number" name="scoress" min="0" max="100" id="input3"onkeydown="handleEnterKey(event, 'ssend')">
     </div>
   <br>
 
@@ -100,10 +101,20 @@
       alert(msg);
     }
 
-  </script>
-<footer><hr><center>
-    <a href="https://threep.cloudfree.jp" id="copy">&copy;2024 TEAM-Threep.</a>
+    function handleEnterKey(event, nextElementId) {
+      if (event.key === 'Enter') {
+        if (nextElementId === 'ssend') {
+          checkAnswer();
+        } else {
+          document.getElementById(nextElementId).focus();
+        }
+        event.preventDefault();
+      }
+    }
 
-    <br><a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a></center></footer>
+  </script>
+  <footer><hr><center>
+    ©2024 TEAM-Threep.<br>
+   <a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a></center></footer>
 </body>
 </html>
