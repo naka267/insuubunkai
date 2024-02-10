@@ -1,29 +1,21 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <title>因数分解メーカー</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
-
 <body>
   <script src="//accaii.com/insuubunkai/script.js" async></script><noscript><img src="//accaii.com/insuubunkai/script?guid=on"></noscript>
   <div class="bg_pattern Paper_v2"></div>
   <br>
   <h3 style="line-height: 2px;">因数分解メーカー
-    <center>
-      <h5>(2次式 X²の係数あり)</h5>
-    </center>
-    <div class="ver">
-      <script src=ver.js></script>
-    </div>
-  </h3>
-  <center>    <a href="javascript:history.back();">戻る</a><br></center>
+    <center> <h5>(2次式 X²の係数あり)</h5> </center>
+    <div class="ver"><script src=ver.js></script></div></h3>
+  <br></center>
   <hr>
   <p id="result"></p>
-  <center>
-    <form name="myForm">
+  <center> <form name="myForm">
       <h4>上の式が X(Ax+B)(Cx+D) と表されるとき、</h4>
       <div>
         <label for="number">X= </label>
@@ -31,23 +23,23 @@
       </div>
       <div>
         <label for="number">A= </label>
-        <input type="number" name="score" min="0" max="1000" id="input1"  onkeydown="handleEnterKey(event, 'input2')">
+        <input type="number" name="score" min="0" max="1000" id="input1" onkeydown="handleEnterKey(event, 'input2')">
       </div>
       <div>
         <label for="number">B= </label>
-        <input type="number" name="score" min="0" max="1000" id="input2"  onkeydown="handleEnterKey(event, 'input3')">
+        <input type="number" name="score" min="0" max="1000" id="input2" onkeydown="handleEnterKey(event, 'input3')">
       </div>
       <div>
         <label for="number">C= </label>
-        <input type="number" name="score" min="0" max="1000" id="input3"  onkeydown="handleEnterKey(event, 'input4')">
+        <input type="number" name="score" min="0" max="1000" id="input3" onkeydown="handleEnterKey(event, 'input4')">
       </div>
       <div>
         <label for="number">D= </label>
-        <input type="number" name="score" min="0" max="1000" id="input4"  onkeydown="handleEnterKey(event, 'input5')">
+        <input type="number" name="score" min="0" max="1000" id="input4" onkeydown="handleEnterKey(event, 'ssend')">
       </div>
       <br>
       <input type="reset" name="clear" value="クリア">
-      <input type="button" name="send" value="決定" onclick="checkAnswer()" accesskey="Enter">
+      <input type="button" name="ssend" value="決定" onclick="checkAnswer()" id="ssend" accesskey="Enter">
       <input type="button" name="send" value="ヒント" onclick="hint()">
     </form>
   </center>
@@ -59,45 +51,40 @@
       }
     });
 
-    var min = 1;
+    var min = -10;
     var max = 10;
+    var min2 = -3;
     var max2 = 3;
 
-    var a = Math.floor(Math.random() * (max2 + 1 - min)) + min;
+    var a = Math.floor(Math.random() * (max2 + 1 - min2)) + min;
     var b = Math.floor(Math.random() * (max + 1 - min)) + min;
-    var c = Math.floor(Math.random() * (max2 + 1 - min)) + min;
+    var c = Math.floor(Math.random() * (max2 + 1 - min2)) + min;
     var d = Math.floor(Math.random() * (max + 1 - min)) + min;
 
-    if(a==0||b==0||c==0||d==0){
-      a+=1
-      b+=1
-      c+=1
-      d+=1
+    if (a == 0 || b == 0 || c == 0 || d == 0) {
+      a += 1
+      b += 1
+      c += 1
+      d += 1
     }
-    if(a==0||b==0||c==0||d==0){
-      a+=1
-      b+=1
-      c+=1
-      d+=1
+    if (a == 0 || b == 0 || c == 0 || d == 0) {
+      a += 1
+      b += 1
+      c += 1
+      d += 1
     }
-    if(a==0||b==0||c==0||d==0){
-      a+=1
-      b+=1
-      c+=1
-      d+=1
+    if (a == 0 || b == 0 || c == 0 || d == 0) {
+      a += 1
+      b += 1
+      c += 1
+      d += 1
     }
-    if(a==0||b==0||c==0||d==0){
-      a+=1
-      b+=1
-      c+=1
-      d+=1
+    if (a == 0 || b == 0 || c == 0 || d == 0) {
+      a += 1
+      b += 1
+      c += 1
+      d += 1
     }
-
-    var k = a * c;//
-    var l = a * d;
-    var m = b * c;
-    var n = l + m;//
-    var o = b * d;//
 
     var k = a * c;//
     var l = a * d;
@@ -125,10 +112,9 @@
 
     //(ax+b)(cx+d)=(ac)x²+(ad+bc)x+bd
 
-    var result = k + "x²+" + n + "x+" + o;
+    var result = (k < 0 ? "" : "") + (k == 1 ? "" : k) + "x²" + (n < 0 ? "" : "+") + (n == 1 ? "" : n) + "x" + (o < 0 ? "" : "+") + o;
     document.getElementById("result").innerHTML = result;
 
-    
 
 
     function checkAnswer() {
@@ -166,7 +152,7 @@
       if (rand == 9) msg = "その答えは一生かけて追いかけてくもんさ。\n できないことなんてないんだ。\n\n 下を向いてばかりじゃ、\nあんなきれいな虹を見つけることなんてできなかったろう？\n 頑張れよ。生きてりゃ色々あるもんさ。知らんけど。";
       alert(msg);
     }
-    
+
     function handleEnterKey(event, nextElementId) {
       if (event.key === 'Enter') {
         if (nextElementId === 'ssend') {
@@ -180,7 +166,14 @@
 
   </script>
 
-    <footer><hr><center>
-      &copy;2024 TEAM-Threep.<br>
-     <a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a></center></footer>
-</body> </html>
+  <footer>
+    <hr>
+    <center>
+      ©2024 TEAM-Threep.<br>
+      <a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a
+        href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a>
+    </center>
+  </footer>
+</body>
+
+</html>
