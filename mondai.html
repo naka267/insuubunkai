@@ -15,7 +15,7 @@
     <a href="#鬼ムズ">鬼ムズ</a> 
     <a href="#異次元">異次元</a>     <hr>
     </div>
-     <hr>
+
   <div class="body">
     <!-- 各セクションに対応する問題と答えのペアを格納する -->
     <script>
@@ -27,6 +27,7 @@
           { question: 'x²+2x+1', answer: 'x²+2x+1' },
           { question: 'x²+2x+1', answer: 'x²+2x+1' },
           { question: 'x²+2x+1', answer: 'x²+2x+1' },
+        ],
         ふつう: [
           { question: '(2a−b)²−10a+5b−24', answer: '(2a-b+3)(2a-b-8)' },
         ],
@@ -38,10 +39,10 @@
         ],
         異次元: [
           { question: 'x⁸+x+1', answer: '(x²+x+1)(x⁶-x⁵+x³-x²+1)' },
-            
+
            { question: 'a⁶ - a⁵b - a⁵c - a⁴b² - 2a⁴c² + 6a³b³ + 2a³c³ - a²b⁴ - a²c⁴ - 2a²c⁴ + 4a²b²c²+2a²bc³ + 3a²cb⁴  - 2b²c⁴ - 2ab⁵ + 2abc⁴ - 2ac⁵ + b⁶ - b⁵a\n - b⁴a² + b⁴c² - 2b³a³ - b²c⁴ + 3b²ca⁴ - 2ba⁵ + 2bac⁴ - 2bc⁵\n ', answer: '(a+b)(a+b−c){(a−b)²−c²}²' },
-        ],
-      ;
+        ]
+      };
       window.onload = function() {
         const container = document.querySelector('.body');
         for (const section in sections) {
@@ -92,6 +93,8 @@
   <footer><hr><center>
     ©2024 TEAM-Threep.<br>
     <a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a></center></footer>
+
+
   <style>
     .body{
       width:400px;
