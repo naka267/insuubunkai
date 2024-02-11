@@ -1,0 +1,97 @@
+☆メールについて
+一旦ステメアドで作ったからこのメアドを使ってくれ（お問い合わせな）
+ID：ＴＥＡＭｔｈｒｅｅｐ
+パスワード：一七四一八七
+（文字化けさせるために全角や漢字にしてます。入力時は半角、数字に）
+
+☆ボタンデザイン：https://jajaaan.co.jp/css/button/
+
+　色図鑑：https://www.colordic.org/
+
+
+☆・ｈｔｍｌ↓↓
+  <p>スマホの時だけ<br class="br-sp">テキストを改行します</p>
+・ｃｓｓ↓↓
+  // スマホの時だけ改行させるクラス
+  .br-sp {
+      display: none;
+  }
+  
+  @media (max-width: 600px) {
+      .br-sp {
+          display: block;
+      }
+  }
+
+☆「-.html」はx^2の係数が+-どちらにもなるようにしたからどうにかしといて
+
+>>bing AIくんに聞いてみたよ彡☆
+test.htmlに置いてある
+
+by仲
+
+
+☆githubのパスワードおいとく
+ｱｲﾃﾞｨｰ:ｎａｋａ２６７
+ｐａｓｓｗｏｒｄ:Ｘ３Ｋ５ＨｅwＬｕＺＳｒ＠ｉｗ
+（文字化けさせるために全角にしてます。入力時は半角に）
+
+☆ver.3.00等いちいち全ファイルに打ち込むのめんどくさかったんで
+ver.jsつくりました。
+
+使い方
+HTMLファイルに下のやつ貼る
+↓
+<div class="ver"><script src=ver.js></script></div>
+
+ver.jsでは、
+↓
+document.write("-ver.うんたらかんたら-");
+
+更新履歴のページだけは毎回書いてネ
+
+☆数式画像の作成
+↓
+https://mykingyo.blogspot.com/p/function-getformulaimage-var.html
+
+1.アクセスして、フォームに数式を打ち込む。
+(例)x+1-2^2x=-3x+1
+
+注)²,¥¥(改行記号)などは使えない模様。
+　1行1行コードを生成して大人しく"<br>"使いましょう。
+
+2.生成ボタンを押すと、[embed code]の下にコードが出力される。
+(例)
+<img alt="x+1-2^2x=-3x+1" src="http://chart.apis.google.com/chart?cht=tx&chl=%5CLarge%20x%2B1-2%5E2x%3D-3x%2B1" />
+
+☆フッターについて
+
+Threepのサイトが未完成なので、とりあえずリンクは消しときます。
+
+(以下復元時のコピー用↓↓)
+<footer><hr><center>
+<a href="https://threep.cloudfree.jp" id="copy">&copy;2024 TEAM-Threep.</a>
+
+<br><a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a></center></footer>
+
+☆(できれば)連休明けに終わらす（ことができたらいいのにな〜）
+
+<未了>
+・3次式ふつう実装(八幡) 
+・マイナスの数を範囲に含める(八幡) 
+・+-バグ、1xバグ、0xバグ修正(八幡) 
+
+・問題集の問題充実(丸山) 
+・ファビコンの設定(丸山)←完了(俺がやっとるやんけ)
+かわりに全ページにtitle設定よろ
+
+https://datadeliver.net/receiver/file_boxes/cc1daa8ca9df438299f2b6e76a5c439c/rc/6ceb6f9fb982449d85f3e23cf49bbabf
+
+
+・問題集の問題充実(仲) 
+・三次式むずい実装(仲) 
+・三次式おに実装(仲) 
+・githubへ移転(仲) 
+・サイト公開(仲) 
+
+だいぶ後回しでいいけどcenter廃止したいな　classで指定したい

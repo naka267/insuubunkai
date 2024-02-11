@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>因数分解メーカー</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <script src="//accaii.com/insuubunkai/script.js" async></script><noscript><img src="//accaii.com/insuubunkai/script?guid=on"></noscript>
+  <div class="bg_pattern Paper_v2"></div>
+  <br>
+  <h3 style="line-height: 2px;">因数分解メーカー
+    <center> <h5>(2次式 X²の係数あり)</h5> </center>
+    <div class="ver"><script src=ver.js></script></div></h3>
+  <br></center>
+  <hr>
+  <p id="result"></p>
+  <center> <form name="myForm">
+      <h4>上の式が X(Ax+B)(Cx+D) と表されるとき、</h4>
+      <div>
+        <label for="number">X= </label>
+        <input type="number" name="score" min="0" max="1000" id="input0" onkeydown="handleEnterKey(event, 'input1')">
+      </div>
+      <div>
+        <label for="number">A= </label>
+        <input type="number" name="score" min="0" max="1000" id="input1" onkeydown="handleEnterKey(event, 'input2')">
+      </div>
+      <div>
+        <label for="number">B= </label>
+        <input type="number" name="score" min="0" max="1000" id="input2" onkeydown="handleEnterKey(event, 'input3')">
+      </div>
+      <div>
+        <label for="number">C= </label>
+        <input type="number" name="score" min="0" max="1000" id="input3" onkeydown="handleEnterKey(event, 'input4')">
+      </div>
+      <div>
+        <label for="number">D= </label>
+        <input type="number" name="score" min="0" max="1000" id="input4" onkeydown="handleEnterKey(event, 'ssend')">
+      </div>
+      <br>
+      <input type="reset" name="clear" value="クリア">
+      <input type="button" name="ssend" value="決定" onclick="checkAnswer()" id="ssend" accesskey="Enter">
+      <input type="button" name="send" value="ヒント" onclick="hint()">
+    </form>
+  </center>
+  <script>
+
+    document.addEventListener('keydown', function (event) {
+      if (event.ctrlKey && event.key === 'Enter') {
+        checkAnswer();
+      }
+    });
+
+    var min = -10;
+    var max = 10;
+    var min2 = -3;
+    var max2 = 3;
+
+    var a = Math.floor(Math.random() * (max2 + 1 - min2)) + min;
+    var b = Math.floor(Math.random() * (max + 1 - min)) + min;
+    var c = Math.floor(Math.random() * (max2 + 1 - min2)) + min;
+    var d = Math.floor(Math.random() * (max + 1 - min)) + min;
+
+    if (a == 0 || b == 0 || c == 0 || d == 0) {
+      a += 1
+      b += 1
+      c += 1
+      d += 1
+    }
+    if (a == 0 || b == 0 || c == 0 || d == 0) {
+      a += 1
+      b += 1
+      c += 1
+      d += 1
+    }
+    if (a == 0 || b == 0 || c == 0 || d == 0) {
+      a += 1
+      b += 1
+      c += 1
+      d += 1
+    }
+    if (a == 0 || b == 0 || c == 0 || d == 0) {
+      a += 1
+      b += 1
+      c += 1
+      d += 1
+    }
+
+    var k = a * c;//
+    var l = a * d;
+    var m = b * c;
+    var n = l + m;//
+    var o = b * d;//
+
+    function gcd() {
+      var f = (a, b) => b ? f(b, a % b) : a;
+      var ans = arguments[0];
+      for (var i = 1; i < arguments.length; i++) {
+        ans = f(ans, arguments[i]);
+      }
+      return ans;
+      document.write(gcd(k, n, o));
+
+    }
+    var g = gcd(k, n, o);
+
+    var kk = k / g;
+    var nn = n / g;
+    var oo = o / g;
+
+    //l65~71でknoの最大公約数を求める==g
+
+    //(ax+b)(cx+d)=(ac)x²+(ad+bc)x+bd
+
+    var result = (k < 0 ? "" : "") + (k == 1 ? "" : k) + "x²" + (n < 0 ? "" : "+") + (n == 1 ? "" : n) + "x" + (o < 0 ? "" : "+") + o;
+    document.getElementById("result").innerHTML = result;
+
+
+
+    function checkAnswer() {
+      let input0 = document.getElementById("input0").value;
+      let input1 = document.getElementById("input1").value;
+      let input2 = document.getElementById("input2").value;
+      let input3 = document.getElementById("input3").value;
+      let input4 = document.getElementById("input4").value;//数値に
+      let K = input1 * input3;//=k
+      let L = input1 * input4;
+      let M = input2 * input3;
+      let N = L + M;//=n
+      let O = input2 * input4;//=o
+      //答えたものを処理
+
+      if (input0 == g && K == kk && N == nn && O == oo) {
+        alert("正解");
+        location.reload()
+      } else {
+        alert("不正解  " + " できるまで考えてみよう ");
+      }
+    }//合ってるか間違ってるか
+
+    function hint() {
+      rand = Math.floor(Math.random() * 10);
+      if (rand == 0) msg = "数学の教科書見ればわかる。きっと。ガンバレ!!";
+      if (rand == 1) msg = "ガンバレ!!君ならできる!!";
+      if (rand == 2) msg = "You can do it!!";
+      if (rand == 3) msg = "ごめんね、僕らが正しい解を表示するコードつくるのサボったばかりに...";
+      if (rand == 4) msg = "きっとできるさ。";
+      if (rand == 5) msg = "数学できるひとに聞いてみよう！";
+      if (rand == 6) msg = "おうおう、君の力はそんなもんなのか？ がんばれよ。君！";
+      if (rand == 7) msg = "一念天に通ず。　きっとできる。がんばれ！！";
+      if (rand == 8) msg = "ごめんね、僕らが正しい解を表示するコードつくるのサボったばかりに..."
+      if (rand == 9) msg = "その答えは一生かけて追いかけてくもんさ。\n できないことなんてないんだ。\n\n 下を向いてばかりじゃ、\nあんなきれいな虹を見つけることなんてできなかったろう？\n 頑張れよ。生きてりゃ色々あるもんさ。知らんけど。";
+      alert(msg);
+    }
+
+    function handleEnterKey(event, nextElementId) {
+      if (event.key === 'Enter') {
+        if (nextElementId === 'ssend') {
+          checkAnswer();
+        } else {
+          document.getElementById(nextElementId).focus();
+        }
+        event.preventDefault();
+      }
+    }
+
+  </script>
+
+  <footer>
+    <hr>
+    <center>
+      ©2024 TEAM-Threep.<br>
+      <a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a
+        href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a>
+    </center>
+  </footer>
+</body>
+
+</html>
