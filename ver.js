@@ -1,1 +1,1 @@
-document.write("-ver.3.50-");
+document.write("-ver.3.43-");
