@@ -2,9 +2,32 @@
 <html lang="ja">
 <head>
   <title>因数分解メーカー</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-</head>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="因数分解の問題を生成してくれるサイトです。生成するのは単純な式だけですが、問題集機能もあるので問題演習に便利です。" />
+  <meta property="og:site_name" content="因数分解メーカー" />
+  <meta property="og:url" content="https://naka267.github.io/insuubunkai/test.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="因数分解メーカー" />
+  <meta property="og:description" content="因数分解の問題を生成してくれるサイトです。生成するのは単純な式だけですが、問題集機能もあるので問題演習に便利です。" />
+  <meta property="og:image" content="https://naka267.github.io/insuubunkai/apple-touch-icon.png" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:description" content="因数分解の問題を生成してくれるサイトです。生成するのは単純な式だけですが、問題集機能もあるので問題演習に便利です。" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="twitter:image:src" content="https://naka267.github.io/insuubunkai/apple-touch-icon.png" />
+
+  <link rel="icon" type="image/png" href="https://naka267.github.io/insuubunkai/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://naka267.github.io/insuubunkai/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://naka267.github.io/insuubunkai/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://naka267.github.io/insuubunkai/favicon-16x16.png">
+  <link rel="manifest" href="https://naka267.github.io/insuubunkai/site.webmanifest">
+  <link rel="mask-icon" href="https://naka267.github.io/insuubunkai/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  </head>
 <body>
   <script src="//accaii.com/insuubunkai/script.js" async></script><noscript><img src="//accaii.com/insuubunkai/script?guid=on"></noscript>
   <div class="bg_pattern Paper_v2"></div>
@@ -70,44 +93,51 @@
     var a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
     var b = Math.floor( Math.random() * (max + 1 - min) ) + min ;
     var c = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-    var c = Math.floor( Math.random() * (max + 1 - min) ) + min ;
     var d = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+    var e = Math.floor( Math.random() * (max + 1 - min) ) + min ;
     var f = Math.floor( Math.random() * (max + 1 - min) ) + min ;
 
 //(Ax+B)(Cx+D)(Ex+F)=(A*C*E)x^3 + (A*C*F + A*D*E + B*C*E)x^2 + (A*D*F + B*C*F + B*D*E)x + B*D*F
 
-    var i = a * c * e
+    var i = a * c * e//
     var j = a * c * f
     var k = a * d * e
     var l = b * c * e
-    var m = j + k + l
+    var m = j + k + l//
     var n = a * d * f
     var o = b * c * f
     var p = b * d * e
-    var q = n + o + p
-    var r = b * d * f
+    var q = n + o + p//
+    var r = b * d * f//
 
-    var result ="x³+" + i + "x²+" + m + "x+" + n;
+    var result =i + "x³+" + m + "x²+" + q + "x+" + r;
     document.getElementById("result").innerHTML = result;
 
     function checkAnswer() {
-      let input1 = document.getElementById("input1").value;
-      let input2 = document.getElementById("input2").value;
-      let input3 = document.getElementById("input3").value;
+    let input1 = document.getElementById("input1").value;
+    let input2 = document.getElementById("input2").value;
+    let input3 = document.getElementById("input3").value;
+    let input4 = document.getElementById("input4").value;
+    let input5 = document.getElementById("input5").value;
+    let input6 = document.getElementById("input6").value;
+    let input7 = document.getElementById("input7").value;
 
-      let o = parseInt(input1)+parseInt(input2)+parseInt(input3)//=i
-      let p = input1 * input2
-      let q = input2 * input3
-      let r = input3 * input1
-      let s = p + q + r//=m
-      let t = input1 * input2 * input3//=n
-      if (o == i && s==m && t==n){
-        alert("正解");
-        location.reload()
-      } else {
-        alert("不正解" + " 正解は A=" + a + " B=" + b + " C=" + c);;
-        location.reload()
-      }
+    let s = input1; // 仮の値
+    let t = input2; // 仮の値
+    let u = input3; // 仮の値
+    let v = input4; // 仮の値
+    let w = input5; // 仮の値
+    let x = input6; // 仮の値
+    let y = input7; // 仮の値
+    let z = input1; // 仮の値
+
+    if (s == t && u == v && w == x){ // 仮の条件
+      alert("正解");
+      location.reload()
+    } else {
+      alert("不正解" + "頑張ろう" );
+      location.reload()
+    }
     }
 
     function hint(){	
