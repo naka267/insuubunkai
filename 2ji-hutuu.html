@@ -46,9 +46,9 @@
   <p id="result"></p>
   <center>
     <form name="myForm">
-      <h4>上の式が X(Ax+B)(Cx+D) と表されるとき、</h4>
+      <h4>上の式が M(Ax+B)(Cx+D) と表されるとき、</h4>
       <div>
-        <label for="number">X= </label>
+        <label for="number">M= </label>
         <input type="number" name="score" min="0" max="1000" id="input0" onkeydown="handleEnterKey(event, 'input1')">
       </div>
       <div>
@@ -67,6 +67,7 @@
         <label for="number">D= </label>
         <input type="number" name="score" min="0" max="1000" id="input4"  onkeydown="handleEnterKey(event, 'input5')">
       </div>
+      <p style="font-size:15px;">ただし、共通因数がないときは、M=1としてください</p>
       <br>
       <input type="reset" name="clear" value="クリア">
       <input type="button" name="send" value="決定" onclick="checkAnswer()" accesskey="Enter">
