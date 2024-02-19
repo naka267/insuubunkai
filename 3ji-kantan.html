@@ -52,7 +52,6 @@
        <label for="number">C= </label>
        <input type="number" name="scoress" min="0" max="100" id="input3"onkeydown="handleEnterKey(event, 'ssend')">
     </div>
-
   <br>
 
 
@@ -88,7 +87,11 @@
     var m = j + k + l;//
     var n = a * b * c;//
 
-    var result ="x³+" + i + "x²+" + m + "x+" + n;
+    var result = "x³" 
+    + (i < 0 ? "-" : "+") + (Math.abs(i) == 1 ? "" : Math.abs(i)) + "x²" 
+    + (m < 0 ? "-" : "+") + (Math.abs(m) == 1 ? "" : Math.abs(m)) + "x" 
+    + (n < 0 ? "-" : "+") + Math.abs(n);
+
     document.getElementById("result").innerHTML = result;
 
     function checkAnswer() {
