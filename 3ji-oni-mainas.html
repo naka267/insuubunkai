@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <title>因数分解メーカー</title>
+  <title>3次式ふつう｜因数分解メーカー</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="因数分解の問題を生成してくれるサイトです。生成するのは単純な式だけですが、問題集機能もあるので問題演習に便利です。" />
   <meta property="og:site_name" content="因数分解メーカー" />
-  <meta property="og:url" content="https://naka267.github.io/insuubunkai/test.html">
+  <meta property="og:url" content="https://naka267.github.io/insuubunkai/3ji-hutuu.html">
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="因数分解メーカー" />
+  <meta property="og:title" content="3次式ふつう｜因数分解メーカー" />
   <meta property="og:description" content="因数分解の問題を生成してくれるサイトです。生成するのは単純な式だけですが、問題集機能もあるので問題演習に便利です。" />
   <meta property="og:image" content="https://naka267.github.io/insuubunkai/apple-touch-icon.png" />
   <meta property="og:locale" content="ja_JP" />
@@ -68,7 +68,7 @@
       <label for="number">F= </label>
       <input type="number" name="F" min="0" max="100" id="input7" onkeydown="handleEnterKey(event, 'ssend')">
 </div>
-     <p style="font-size:15px;">ただし、共通因数がないときは、M=1としてください</p>
+   <p style="font-size:15px;">ただし、共通因数がないときは、M=1としてください</p>
   <br>
 
 
@@ -86,16 +86,15 @@
         }
       });
 
-    var min = -20;
-    var max = 20;
+    var min = -30 ;
+    var max = 30 ;
 
-    var a = Math.floor(Math.random() * 2 - 1 * (max + 1 - min)) + min;
-    var b = Math.floor(Math.random() * 2 - 1 * (max + 1 - min)) + min;
-    var c = Math.floor(Math.random() * 2 - 1 * (max + 1 - min)) + min;
-    var d = Math.floor(Math.random() * 2 - 1 * (max + 1 - min)) + min;
-    var e = Math.floor(Math.random() * 2 - 1 * (max + 1 - min)) + min;
-    var f = Math.floor(Math.random() * 2 - 1 * (max + 1 - min)) + min;
-
+    var a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+    var b = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+    var c = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+    var d = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+    var e = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+    var f = Math.floor( Math.random() * (max + 1 - min) ) + min ;
 
 //(Ax+B)(Cx+D)(Ex+F)=(A*C*E)x^3 + (A*C*F + A*D*E + B*C*E)x^2 + (A*D*F + B*C*F + B*D*E)x + B*D*F
 
@@ -115,10 +114,9 @@
       + (q < 0 ? "-" : "+") + (Math.abs(q) == 1 ? "" : Math.abs(q)) + "x" 
       + (r < 0 ? "-" : "+") + Math.abs(r);
 
-
     document.getElementById("result").innerHTML = result;
 
-
+    
     function checkAnswer() {
 
 
@@ -139,8 +137,8 @@
       var mm =m / g
       var qq =q / g
       var rr =r / g
-
-
+        
+        
 
     let input1 = document.getElementById("input1").value;
     let input2 = document.getElementById("input2").value;
@@ -201,6 +199,6 @@
     ©2024 TEAM-Threep.<br>
    <a href="https://naka267.github.io/insuubunkai/index.html">メニューにもどる</a>　<a href="https://naka267.github.io/insuubunkai/kousin.html">更新履歴</a>
    </center></footer>
-
+  
 </body>
 </html>
