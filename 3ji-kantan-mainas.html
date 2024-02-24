@@ -4,7 +4,7 @@
   <title>３次式かんたん｜因数分解メーカー</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="因数分解の問題を生成してくれるサイトです。生成するのは単純な式だけですが、問題集機能もあるので問題演習に便利です。" />
   <meta property="og:site_name" content="因数分解メーカー" />
@@ -65,34 +65,45 @@
  </center>
     <script>
 
-            document.addEventListener('keydown', function(event) {
-              if (event.ctrlKey && event.key === 'Enter') {
-                checkAnswer();
-              }
-            });
+      document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.key === 'Enter') {
+          checkAnswer();
+        }
+      });
 
-          var min = -5 ;
-          var max = 5 ;
+      var min = -5;
+      var max = 5;
 
-          var a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-          var b = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-          var c = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+      var a, b, c;
 
-      //(x+a)(x+b)(x+c)=x^3+(a+b+c)x^2+(ab+bc+ca)x+abc
+      do {
+        a = Math.floor(Math.random() * (max + 1 - min)) + min;
+      } while (a === 0);
 
-          var i = a + b + c;//
-          var j = a * b;
-          var k = b * c;
-          var l = c * a;
-          var m = j + k + l;//
-          var n = a * b * c;//
+      do {
+        b = Math.floor(Math.random() * (max + 1 - min)) + min;
+      } while (b === 0);
 
-          var result = "x³" 
-          + (i < 0 ? "-" : "+") + (Math.abs(i) == 1 ? "" : Math.abs(i)) + "x²" 
-          + (m < 0 ? "-" : "+") + (Math.abs(m) == 1 ? "" : Math.abs(m)) + "x" 
-          + (n < 0 ? "-" : "+") + Math.abs(n);
+      do {
+        c = Math.floor(Math.random() * (max + 1 - min)) + min;
+      } while (c === 0);
 
-          document.getElementById("result").innerHTML = result;
+      // (x+a)(x+b)(x+c)=x^3+(a+b+c)x^2+(ab+bc+ca)x+abc
+
+      var i = a + b + c;
+      var j = a * b;
+      var k = b * c;
+      var l = c * a;
+      var m = j + k + l;
+      var n = a * b * c;
+
+      var result = "x³" 
+      + (i < 0 ? "-" : "+") + (Math.abs(i) == 1 ? "" : Math.abs(i)) + "x²" 
+      + (m < 0 ? "-" : "+") + (Math.abs(m) == 1 ? "" : Math.abs(m)) + "x" 
+      + (n < 0 ? "-" : "+") + Math.abs(n);
+
+      document.getElementById("result").innerHTML = result;
+
 
           function checkAnswer() {
             let input1 = document.getElementById("input1").value;
